@@ -10,6 +10,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+  <style>
+    body {
+      background-color: rgb(212, 211, 126);
+    }
+
+    h1 {
+      color: maroon;
+    }
+
+    form {
+      line-height: 1cm;
+    }
+  </style>
   <title>Calorie control</title>
 </head>
 
@@ -32,31 +45,110 @@
     </div>
   </nav>
 
-  <div>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", { packages: ["corechart"] });
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work', 11],
-          ['Eat', 2],
-          ['Commute', 2],
-          ['Watch TV', 2],
-          ['Sleep', 7]
-        ]);
-
-        var options = {
-          title: 'My Daily Activities',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
-    <div id="donutchart" style="width: 900px; height: 500px;"></div>
+  <div class="container">
+    <br>
+    <br>
+    <h1>Welcome to Calorie control program.</h1>
+    <br>
+    <h3>Here we intend to help you control your diet and look after your nutritional supply.</h3>
+    <br>
+    <form action="">
+      <table>
+        <tr>
+          <td><label for="w">Weight(in kgs):</label></td>
+          <td><input type="range" name="w" id="w" min="30" max="200" value="60">
+            <output class="w-output" for="w"></output>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="age">Age:</label></td>
+          <td><input type="range" name="age" id="age" min="18" max="100" value="25">
+            <output class="age-output" for="age"></output>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="h">Height(in cms):</label></td>
+          <td><input type="range" name="h" id="h" min="120" max="250" value="150">
+            <output class="h-output" for="h"></output>
+          </td>
+        </tr>
+        <tr>
+          <td><label class="radio-inline" for="veg">Veg:
+              <input type="radio" name="veg" id="veg" value="veg">
+            </label>
+          </td>
+          <td>
+            <label class="radio-inline" for="non-veg">Non-Veg:
+              <input type="radio" name="veg" id="non-veg" value="non-veg">
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="meals">How many meals do you have in a day:</label></td>
+          <td><input type="number" name="meals" id="meals" min="0" max="6" value="3"></td>
+        </tr>
+        <tr>
+          <td><label class="radio-inline" for="male">Male:
+              <input type="radio" name="g" id="male" value="Male">
+            </label>
+          </td>
+          <td>
+            <label class="radio-inline" for="female">Female:
+              <input type="radio" name="g" id="female" value="Female">
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="d">Are you diabetic:</label></td>
+          <td><label class="radio-inline" for="Yes">Yes:
+              <input type="radio" name="d" id="Yes" value="Yes">
+            </label>
+            <label class="radio-inline" for="No">No:
+              <input type="radio" name="d" id="No" value="No">
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="submit" name="submit" value="Submit">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
   </div>
+
+  <script>
+    {
+      const w = document.querySelector('#w');
+      const output = document.querySelector('.w-output');
+
+      output.textContent = w.value;
+
+      w.addEventListener('input', function () {
+        output.textContent = w.value;
+      });
+    }
+    {
+      const age = document.querySelector('#age');
+      const output = document.querySelector('.age-output');
+
+      output.textContent = age.value;
+
+      age.addEventListener('input', function () {
+        output.textContent = age.value;
+      });
+    }
+    {
+      const h = document.querySelector('#h');
+      const output = document.querySelector('.h-output');
+
+      output.textContent = h.value;
+
+      h.addEventListener('input', function () {
+        output.textContent = h.value;
+      });
+    }
+  </script>
 </body>
+
 </html>
