@@ -12,16 +12,34 @@
 
   <style>
     body {
-      background-color: rgb(212, 211, 126);
+      background-color: rgb(142, 202, 236);
     }
 
     h1 {
       color: maroon;
     }
 
+    label {
+      font-size: 17px;
+    }
+
     form {
       line-height: 1cm;
     }
+
+    button {
+      background-color: aliceblue;
+  font-family: lato,sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: #0f0f0f;
+  display: inline-block;
+  position: relative;
+  border: 3px solid #080808;
+  border-radius: 20px;
+}
   </style>
   <title>Calorie control</title>
 </head>
@@ -85,7 +103,7 @@
         </tr>
         <tr>
           <td><label for="meals">How many meals do you have in a day:</label></td>
-          <td><input type="number" name="meals" id="meals" min="0" max="6" value="3"></td>
+          <td><input type="number" name="meals" id="meals" min="1" max="6" value="3"></td>
         </tr>
         <tr>
           <td><label class="radio-inline" for="male">Male:
